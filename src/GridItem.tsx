@@ -6,7 +6,7 @@ import {
 } from "react-gesture-responder";
 import { animated, interpolate, useSpring } from "react-spring";
 import { GridItemContext } from "./GridItemContext";
-
+const {div: Adiv} = animated as any
 interface GridItemProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
 }
@@ -174,6 +174,6 @@ export function GridItem({
       grid
     })
   ) : (
-    <animated.div {...props}>{children}</animated.div>
+    <Adiv {...props}>{children}</Adiv>
   );
 }
