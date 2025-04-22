@@ -77,5 +77,8 @@
     "resize-observer-polyfill": "^1.5.1",
     "tslib": "^1.9.3"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "volta": {
+    "node": "18.18.0"
+  }
 }
