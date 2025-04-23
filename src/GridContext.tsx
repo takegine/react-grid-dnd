@@ -234,7 +234,9 @@ export function GridContextProvider({
    */
 
   function endTraverse() {
-    setTraverse(null);
+    requestAnimationFrame(() => {
+      setTraverse(null);
+    });
   }
 
   /**
