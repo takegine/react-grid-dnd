@@ -40,6 +40,9 @@ devDependencies:
   '@types/jest':
     specifier: ^24.0.11
     version: 24.0.13
+  '@types/node':
+    specifier: '18.18'
+    version: 18.18.14
   '@types/storybook__react':
     specifier: ^4.0.1
     version: 4.0.1
@@ -2601,8 +2604,10 @@ packages:
     resolution: {integrity: sha512-leUNzbFTMX94TWaIKz8N15Chu55F9QSH+INKayQr5xpkasBQBRF3qQXfo3/dOnMU/dEIit+Y/SU8HyOjq++GwA==}
     dev: true
 
-  /@types/node@12.0.1:
-    resolution: {integrity: sha512-7sy7DKVJrCTbaAERJZq/CU12bzdmpjRr321/Ne9QmzhB3iZ//L16Cizcni5hHNbANxDbxwMb9EFoWkM8KPkp0A==}
+  /@types/node@18.18.14:
+    resolution: {integrity: sha512-iSOeNeXYNYNLLOMDSVPvIFojclvMZ/HDY2dU17kUlcsOsSQETbWIslJbYLZgA+ox8g2XQwSHKTkght1a5X26lQ==}
+    dependencies:
+      undici-types: 5.26.5
     dev: true
 
   /@types/prop-types@15.7.1:
@@ -2626,7 +2631,7 @@ packages:
   /@types/resolve@0.0.8:
     resolution: {integrity: sha512-auApPaJf3NPfe18hSoJkp8EbZzer2ISk7o8mCC3M9he/a04+gbMF97NkpD2S8riMGvm4BMRI59/SZQSaLTKpsQ==}
     dependencies:
-      '@types/node': 12.0.1
+      '@types/node': 18.18.14
     dev: true
 
   /@types/stack-utils@1.0.1:
@@ -2647,14 +2652,14 @@ packages:
   /@types/vfile-message@1.0.1:
     resolution: {integrity: sha512-mlGER3Aqmq7bqR1tTTIVHq8KSAFFRyGbrxuM8C/H82g6k7r2fS+IMEkIu3D7JHzG10NvPdR8DNx0jr0pwpp4dA==}
     dependencies:
-      '@types/node': 12.0.1
+      '@types/node': 18.18.14
       '@types/unist': 2.0.3
     dev: true
 
   /@types/vfile@3.0.2:
     resolution: {integrity: sha512-b3nLFGaGkJ9rzOcuXRfHkZMdjsawuDD0ENL9fzTophtBg8FJHSGbH7daXkEpcwy3v7Xol3pAvsmlYyFhR4pqJw==}
     dependencies:
-      '@types/node': 12.0.1
+      '@types/node': 18.18.14
       '@types/unist': 2.0.3
       '@types/vfile-message': 1.0.1
     dev: true
@@ -5640,7 +5645,7 @@ packages:
     resolution: {integrity: sha512-oWb1Z6mkHIskLzEJ/XWX0srkpkTQ7vaopMQkyaEIoq0fmtFVxOthb8cCxeT+p3ynTdkk/RZwbgG4brR5BeWECw==}
     engines: {node: '>= 4.0'}
     os: [darwin]
-    deprecated: Upgrade to fsevents v2 to mitigate potential security issues
+    deprecated: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
     requiresBuild: true
     dependencies:
       bindings: 1.5.0
@@ -10539,6 +10544,10 @@ packages:
     dependencies:
       commander: 2.20.0
       source-map: 0.6.1
+    dev: true
+
+  /undici-types@5.26.5:
+    resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
     dev: true
 
   /unicode-canonical-property-names-ecmascript@1.0.4:
