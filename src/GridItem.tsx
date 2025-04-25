@@ -150,12 +150,14 @@ export function GridItem({
     ...bind,
     style: {
       cursor: !!disableDrag ? "grab" : undefined,
-      zIndex: styles.zIndex,
-      position: "absolute",
+      zIndex: isDragging ? "999999" : styles.zIndex,
+      position: isDragging ? "fixed" : "absolute",
       width: columnWidth + "px",
       opacity: styles.opacity,
       height: rowHeight + "px",
       boxSizing: "border-box",
+      transformStyle: "preserve-3d",
+      willChange: isDragging ? "transform" : undefined,
       transform: interpolate(
         [styles.xy, styles.scale],
         (xy: any, s: any) =>
