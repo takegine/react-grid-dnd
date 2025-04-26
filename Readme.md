@@ -5,7 +5,10 @@
      src="https://raw.githubusercontent.com/bmcmahen/react-dnd-grid/master/demo.gif">
 </div>
 
-# react-grid-dnd
+# react-grid-dnd2
+
+update for support react 18
+but can not working on StrictMode
 
 [![npm package](https://img.shields.io/npm/v/react-dnd-grid/latest.svg)](https://www.npmjs.com/package/react-dnd-grid)
 [![Follow on Twitter](https://img.shields.io/twitter/follow/benmcmahen.svg?style=social&logo=twitter)](https://twitter.com/intent/follow?screen_name=benmcmahen)

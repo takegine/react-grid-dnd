@@ -1,11 +1,18 @@
 {
-  "name": "react-grid-dnd",
-  "version": "2.1.2",
+  "name": "react-grid-dnd2",
+  "version": "2.2.0",
   "description": "grid style drag and drop for react",
-  "main": "cjs/index.js",
-  "module": "esm/index.js",
-  "typings": "esm/index.d.ts",
-  "author": "Ben McMahen",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "authors": ["Ben McMahen","西索酱"],
   "license": "MIT",
   "private": false,
   "keywords": [
@@ -19,18 +26,16 @@
     "test": "jest",
     "test-watch": "jest -w",
     "storybook": "start-storybook -p 6006",
-    "build-esm": "rimraf esm && tsc",
-    "build-other": "rimraf umd && rimraf cjs && rollup -c",
-    "build": "pnpm run build-esm && pnpm run build-other",
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
     "prepublishOnly": "pnpm run build"
   },
-  "homepage": "https://github.com/bmcmahen/react-grid-dnd",
+  "homepage": "https://github.com/takegine/react-grid-dnd",
   "bugs": {
-    "url": "https://github.com/bmcmahen/react-grid-dnd/issues"
+    "url": "https://github.com/takegine/react-grid-dnd/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bmcmahen/react-grid-dnd.git"
+    "url": "https://github.com/takegine/react-grid-dnd.git"
   },
   "peerDependencies": {
     "react": ">=16.8.0 || 17.x || 18.x",
@@ -38,10 +43,6 @@
     "react-gesture-responder": "^2.1.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.0",
-    "@babel/preset-env": "^7.4.2",
-    "@babel/preset-react": "^7.0.0",
-    "@babel/preset-typescript": "^7.3.3",
     "@storybook/react": "^5.0.5",
     "@types/jest": "^24.0.11",
     "@types/node": "18.18",
@@ -56,17 +57,6 @@
     "react": "^18",
     "react-dom": "^18",
     "react-gesture-responder": "^2.1.0",
-    "rimraf": "^2.6.3",
-    "rollup": "^1.7.4",
-    "rollup-plugin-babel": "^4.3.2",
-    "rollup-plugin-cleanup": "^3.1.1",
-    "rollup-plugin-commonjs": "^9.2.2",
-    "rollup-plugin-filesize": "^6.0.1",
-    "rollup-plugin-json": "^4.0.0",
-    "rollup-plugin-node-resolve": "^4.0.1",
-    "rollup-plugin-sourcemaps": "^0.4.2",
-    "rollup-plugin-typescript2": "^0.20.1",
-    "rollup-plugin-uglify": "^6.0.2",
     "ts-jest": "^24.0.1",
     "typescript": "^3.5.0-dev.20190517",
     "webpack": "^4.29.6"
@@ -79,6 +69,10 @@
     "tslib": "^2.8.1"
   },
   "sideEffects": false,
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "volta": {
     "node": "18.18.0"
   }
